@@ -4,7 +4,9 @@ function outsideClick(element, events, callback) {
 
   if (!element.hasAttribute(outside)) {
     events.forEach(userEvent => {
-      setTimeout(() => documento.addEventListener(userEvent, handleOutsideClick));
+      setTimeout(() =>
+        documento.addEventListener(userEvent, handleOutsideClick)
+      );
     });
     element.setAttribute(outside, "");
   }
@@ -23,7 +25,7 @@ function outsideClick(element, events, callback) {
 
 const menuButton = document.querySelector('[data-menu="button"]');
 const menuList = document.querySelector('[data-menu="list"]');
-const eventos = ["touchstart", "click"];
+const eventos = ["click"];
 function openMenu(event) {
   menuList.classList.toggle("active");
   menuButton.classList.toggle("active");
