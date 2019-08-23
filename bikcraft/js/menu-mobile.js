@@ -1,10 +1,10 @@
 function outsideClick(element, events, callback) {
-  const html = document.documentElement;
+  const documento = document.documentElement;
   const outside = "data-outside";
 
   if (!element.hasAttribute(outside)) {
     events.forEach(userEvent => {
-      setTimeout(() => html.addEventListener(userEvent, handleOutsideClick));
+      setTimeout(() => documento.addEventListener(userEvent, handleOutsideClick));
     });
     element.setAttribute(outside, "");
   }
@@ -12,7 +12,7 @@ function outsideClick(element, events, callback) {
     if (!element.contains(event.target)) {
       element.removeAttribute(outside);
       events.forEach(userEvent => {
-        html.removeEventListener(userEvent, handleOutsideClick);
+        documento.removeEventListener(userEvent, handleOutsideClick);
       });
       callback();
     }
@@ -23,7 +23,7 @@ function outsideClick(element, events, callback) {
 
 const menuButton = document.querySelector('[data-menu="button"]');
 const menuList = document.querySelector('[data-menu="list"]');
-const eventos = ["click", "touchstart"];
+const eventos = ["click"];
 function openMenu(event) {
   menuList.classList.toggle("active");
   menuButton.classList.toggle("active");
