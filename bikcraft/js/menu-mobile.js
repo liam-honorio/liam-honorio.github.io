@@ -23,7 +23,7 @@ function outsideClick(element, events, callback) {
 
 const menuButton = document.querySelector('[data-menu="button"]');
 const menuList = document.querySelector('[data-menu="list"]');
-const eventos = ["click"];
+const eventos = ["touchstart", "click"];
 function openMenu(event) {
   menuList.classList.toggle("active");
   menuButton.classList.toggle("active");
